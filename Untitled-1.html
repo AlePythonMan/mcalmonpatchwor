@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Idade Canina</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333333;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+    .calculate-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .calculate-btn:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 30px;
+      text-align: center;
+      color: #333333;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .disclaimer {
+      font-size: 12px;
+      text-align: center;
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+    .tips {
+      margin-top: 40px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .tips h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .tips ul {
+      padding-left: 20px;
+    }
+    .tips li {
+      margin-bottom: 10px;
+    }
+    .expand-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #00b300;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .expand-btn:hover {
+      background-color: #008000;
+    }
+    /* Estilos para a tabela de comparação */
+    .comparison-block {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 8px;
+      text-align: center;
+    }
+    .comparison-table th {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+    .comparison-table td {
+      border-bottom: 1px solid #cccccc;
+    }
+    /* Estilos para a imagem de perfil */
+    .profile-image {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #007bff;
+      /* Outros estilos que você desejar para a imagem */
+    }
+    /* Estilos para a seção de artigos */
+    .articles-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .article-block {
+      flex: 1;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+      margin-left: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .article-title {
+      color: #007bff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .article-content {
+      margin-bottom: 30px;
+    }
+    .article-content h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .article-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Estilo para o link quando passar o mouse */
+    .article-block:hover {
+      background-color: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Idade Canina</h1>
+    <!-- Botão para fazer upload de imagem -->
+    <label for="dog-name">Digite o nome do seu cão:</label>
+    <input type="text" id="dog-name" placeholder="Nome do cão">
+    <label for="human-age">Digite a idade humana do seu cão:</label>
+    <input type="number" id="human-age" placeholder="Idade humana">
+    <button class="calculate-btn" onclick="calculate()">Calcular</button>
+    <div class="result" id="result"></div>
+    <p class="disclaimer">Aviso de responsabilidade legal: Esta calculadora fornece apenas uma estimativa, pois a relação de idade canina nem sempre é linear e pode variar de acordo com o porte e a raça do animal.</p>
+    <div class="tips">
+      <h2>Dicas para aumentar o tempo de vida do seu cão:</h2>
+      <button class="expand-btn" onclick="toggleTips()">Mostrar Dicas</button>
+      <ul id="tips-list" style="display: none;">
+        <li>Alimentação balanceada e de qualidade, de acordo com a idade e necessidades do cão;</li>
+        <li>Atividade física regular e adequada ao porte e energia do cão;</li>
+        <li>Visitas regulares ao veterinário para check-ups e vacinação;</li>
+        <li>Proporcionar um ambiente seguro e livre de substâncias tóxicas;</li>
+        <li>Escovar os dentes regularmente e cuidar da higiene bucal;</li>
+        <li>Manter o cão livre de pulgas, carrapatos e vermes;</li>
+        <li>Dar amor, carinho e atenção ao seu cão, promovendo um ambiente familiar saudável;</li>
+        <li>Estimular a mente do cão com brinquedos e atividades que o desafiem mentalmente;</li>
+        <li>Evitar o estresse excessivo e situações que possam causar ansiedade no cão;</li>
+        <li>Proporcionar um local adequado para descanso e sono tranquilo.</li>
+      </ul>
+    </div>
+
+    <!-- Novo bloco de comparação da idade canina -->
+    <div class="comparison-block">
+      <h2>Comparação da Idade Canina com a Idade Humana</h2>
+      <table class="comparison-table">
+        <tr>
+          <th>Idade Canina</th>
+          <th>Idade Humana</th>
+        </tr>
+        <tr>
+          <td>1 ano</td>
+          <td>7 anos</td>
+        </tr>
+        <tr>
+          <td>2 anos</td>
+          <td>14 anos</td>
+        </tr>
+        <tr>
+          <td>3 anos</td>
+          <td>21 anos</td>
+        </tr>
+        <tr>
+          <td>4 anos</td>
+          <td>28 anos</td>
+        </tr>
+        <!-- Adicione mais linhas se necessário -->
+      </table>
+      <div class="calculation-info">
+        <h3>Como Calcular a Idade Canina:</h3>
+        <p>
+          A forma comum de calcular a idade canina é multiplicar a idade do cão por 7, que é uma média aproximada.
+          No entanto, é importante ressaltar que a relação de idade canina nem sempre é linear e pode variar
+          de acordo com o porte e a raça do animal. Além disso, cães envelhecem mais rapidamente nos primeiros anos
+          de vida e depois o processo de envelhecimento desacelera.
+        </p>
+      </div>
+    </div>
+
+    <!-- Seção de Artigos Interessantes -->
+    <div class="articles-section">
+      <!-- Use a tag <a> em torno do conteúdo do bloco de artigo para criar o link -->
+      <a href="https://www.example.com/artigo-1" class="article-block">
+        <h2 class="article-title">Artigos Interessantes sobre Cães</h2>
+        <div class="article-content">
+          <h3>Como Ensinar Truques Divertidos ao Seu Cão</h3>
+          <p>
+            Ensinar truques ao seu cão pode ser uma atividade divertida e estimulante
+            para ambos. Neste artigo, discutiremos dicas e técnicas para ensinar seu
+            cão a fazer truques como dar a pata, rolar, entre outros.
+          </p>
+        </div>
+      </a>
+      <!-- Use a tag <a> em torno do conteúdo do bloco de artigo para criar o link -->
+      <a href="https://www.example.com/artigo-2" class="article-block">
+        <h2 class="article-title">As Raças de Cachorro Mais Inteligentes</h2>
+        <div class="article-content">
+          <h3>As Raças de Cachorro Mais Inteligentes</h3>
+          <p>
+            Descubra quais são as raças de cachorro consideradas as mais inteligentes
+            e aprenda sobre suas características distintas. Entenda como a inteligência
+            pode afetar o treinamento e a interação com essas raças.
+          </p>
+        </div>
+      </a>
+      <!-- Adicione mais blocos com artigos aqui -->
+    </div>
+
+  </div>
+
+  <script>
+    function calculate() {
+      const dogName = document.getElementById('dog-name').value;
+      const humanAge = parseInt(document.getElementById('human-age').value);
+
+      if (dogName.trim() === '') {
+        alert('Por favor, digite o nome do seu cão.');
+        return;
+      }
+
+      if (humanAge > 0) {
+        const canineAge = humanAge * 7;
+        document.getElementById('result').innerText = `A idade canina de ${dogName} é aproximadamente ${canineAge} anos.`;
+      } else {
+        document.getElementById('result').innerText = 'Por favor, digite uma idade válida.';
+      }
+    }
+
+    function toggleTips() {
+      const tipsList = document.getElementById('tips-list');
+      const expandBtn = document.querySelector('.expand-btn');
+
+      if (tipsList.style.display === 'none') {
+        tipsList.style.display = 'block';
+        expandBtn.innerText = 'Esconder Dicas';
+      } else {
+        tipsList.style.display = 'none';
+        expandBtn.innerText = 'Mostrar Dicas';
+      }
+    }
+  </script>
+</body>
+</html>
