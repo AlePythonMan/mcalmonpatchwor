@@ -1,306 +1,257 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Idade Canina</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      background-color: #ffffff;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    }
-    h1 {
-      text-align: center;
-      color: #007bff;
-      margin-bottom: 30px;
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-      color: #333333;
-      font-weight: bold;
-    }
-    input[type="text"],
-    input[type="number"] {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #cccccc;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      box-sizing: border-box;
-    }
-    .calculate-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .calculate-btn:hover {
-      background-color: #0056b3;
-    }
-    .result {
-      margin-top: 30px;
-      text-align: center;
-      color: #333333;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .disclaimer {
-      font-size: 12px;
-      text-align: center;
-      opacity: 0.7;
-      margin-top: 20px;
-    }
-    .tips {
-      margin-top: 40px;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    .tips h2 {
-      color: #007bff;
-      margin-bottom: 20px;
-    }
-    .tips ul {
-      padding-left: 20px;
-    }
-    .tips li {
-      margin-bottom: 10px;
-    }
-    .expand-btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #00b300;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .expand-btn:hover {
-      background-color: #008000;
-    }
-    /* Estilos para a tabela de comparação */
-    .comparison-block {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-      margin-top: 20px;
-    }
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    .comparison-table th, .comparison-table td {
-      padding: 8px;
-      text-align: center;
-    }
-    .comparison-table th {
-      background-color: #007bff;
-      color: #ffffff;
-    }
-    .comparison-table td {
-      border-bottom: 1px solid #cccccc;
-    }
-    /* Estilos para a imagem de perfil */
-    .profile-image {
-      display: block;
-      margin: 0 auto;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 3px solid #007bff;
-      /* Outros estilos que você desejar para a imagem */
-    }
-    /* Estilos para a seção de artigos */
-    .articles-section {
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .article-block {
-      flex: 1;
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-      margin-left: 10px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .article-title {
-      color: #007bff;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .article-content {
-      margin-bottom: 30px;
-    }
-    .article-content h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .article-content p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Master For Tech</title>
+        <link rel="icon" type="image/x-icon" href="/favico.png" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/aos.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <div class="container px-5">
+                <a class="navbar-brand fw-bold" href="#page-top"><img src="assets/img/logotipo.svg"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="bi-list"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Nossos serviços</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-2" href="#Sobre">Contatos</a></li>
+                    </ul>
+                    <a href="https://web.whatsapp.com/send?phone=5511945742819" target="_blank" class="btn btn-primary px-200 mb-200 mb-lg-200">
+                        <span class="d-flex align-items-center">
+                            <i class="bi-chat-dots text-fill me-2"></i>
+                            <span class="white big">Entrar em contato</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- Mashead header-->
+        <header class="masthead">
+            <div class="container px-20">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <!-- Mashead text and app badges-->
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3">Transformamos ideias em <span style="color: #005BFF; text-decoration: underline;">realidade</span></h1>
+                            <p class="lead fw-normal text-muted mb-5">Desenvolvemos sistemas, ferramentas e aplicativos de alto padrão que irão auxiliá-lo a impulsionar o crescimento de sua empresa!</p>
+                            <div class="d-flex flex-column flex-lg-row align-items-center">
+                          
+                                <a href="https://web.whatsapp.com/send?phone=5511945742819" target="_blank" class="btn btn-primary px-200 mb-200 mb-lg-200">
+                                    <span class="d-flex align-items-center">
+                                        <i class="bi-chat-dots text-fill me-2"></i>
+                                        <span class="white big">Entrar em contato</span>
+                                    </span>
+                                </a>
+                                    <div <a class="font-alt text-white">" " </a> </div>
+                                <a href="https://web.whatsapp.com/send?phone=5511945742819" target="_blank" class="btn btn-whatsapp px-200 mb-200 mb-lg-200">
+                                    <span class="d-flex align-items-center">
+                                        <i class="bi-whatsapp text-fill me-2"></i>
+                                        <span class="white big">Transforme agora</span>
+                                    </span>
+                                </a>
+                            </div>
+                       
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Masthead device mockup feature-->
+                        <div class="masthead-device-mockup">
+                            <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="circleGradient" gradientTransform="rotate(45)">
+                                        <stop class="gradient-start-color" offset="0%"></stop>
+                                        <stop class="gradient-end-color" offset="100%"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg
+                                >
+                                    <rect x="-40" y="78.39" width="288" height="84.05" rx="20" transform="translate(120.42 -49.88) rotate(45)"></rect>
+                                    <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03" transform="translate(-49.88 120.42) rotate(-45)"></rect></svg
 
-    /* Estilo para o link quando passar o mouse */
-    .article-block:hover {
-      background-color: #ebebeb;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Calculadora de Idade Canina</h1>
-    <!-- Botão para fazer upload de imagem -->
-    <label for="dog-name">Digite o nome do seu cão:</label>
-    <input type="text" id="dog-name" placeholder="Nome do cão">
-    <label for="human-age">Digite a idade humana do seu cão:</label>
-    <input type="number" id="human-age" placeholder="Idade humana">
-    <button class="calculate-btn" onclick="calculate()">Calcular</button>
-    <div class="result" id="result"></div>
-    <p class="disclaimer">Aviso de responsabilidade legal: Esta calculadora fornece apenas uma estimativa, pois a relação de idade canina nem sempre é linear e pode variar de acordo com o porte e a raça do animal.</p>
-    <div class="tips">
-      <h2>Dicas para aumentar o tempo de vida do seu cão:</h2>
-      <button class="expand-btn" onclick="toggleTips()">Mostrar Dicas</button>
-      <ul id="tips-list" style="display: none;">
-        <li>Alimentação balanceada e de qualidade, de acordo com a idade e necessidades do cão;</li>
-        <li>Atividade física regular e adequada ao porte e energia do cão;</li>
-        <li>Visitas regulares ao veterinário para check-ups e vacinação;</li>
-        <li>Proporcionar um ambiente seguro e livre de substâncias tóxicas;</li>
-        <li>Escovar os dentes regularmente e cuidar da higiene bucal;</li>
-        <li>Manter o cão livre de pulgas, carrapatos e vermes;</li>
-        <li>Dar amor, carinho e atenção ao seu cão, promovendo um ambiente familiar saudável;</li>
-        <li>Estimular a mente do cão com brinquedos e atividades que o desafiem mentalmente;</li>
-        <li>Evitar o estresse excessivo e situações que possam causar ansiedade no cão;</li>
-        <li>Proporcionar um local adequado para descanso e sono tranquilo.</li>
-      </ul>
-    </div>
+               
+                          
+                                        <!-- PUT CONTENTS HERE:-->
+                                        <!-- * * This can be a video, image, or just about anything else.-->
+                                        <!-- * * Set the max width of your media to 100% and the height to-->
+                                        <!-- * * 100% like the demo example below.-->
+                                        <video muted="muted" autoplay="" loop="" style="max-width: 400PX; height: 100%;"><source src="assets/img/demovsteste.mp4" type="video/mp4" /></video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <!-- Novo bloco de comparação da idade canina -->
-    <div class="comparison-block">
-      <h2>Comparação da Idade Canina com a Idade Humana</h2>
-      <table class="comparison-table">
-        <tr>
-          <th>Idade Canina</th>
-          <th>Idade Humana</th>
-        </tr>
-        <tr>
-          <td>1 ano</td>
-          <td>7 anos</td>
-        </tr>
-        <tr>
-          <td>2 anos</td>
-          <td>14 anos</td>
-        </tr>
-        <tr>
-          <td>3 anos</td>
-          <td>21 anos</td>
-        </tr>
-        <tr>
-          <td>4 anos</td>
-          <td>28 anos</td>
-        </tr>
-        <!-- Adicione mais linhas se necessário -->
-      </table>
-      <div class="calculation-info">
-        <h3>Como Calcular a Idade Canina:</h3>
-        <p>
-          A forma comum de calcular a idade canina é multiplicar a idade do cão por 7, que é uma média aproximada.
-          No entanto, é importante ressaltar que a relação de idade canina nem sempre é linear e pode variar
-          de acordo com o porte e a raça do animal. Além disso, cães envelhecem mais rapidamente nos primeiros anos
-          de vida e depois o processo de envelhecimento desacelera.
-        </p>
-      </div>
-    </div>
+        <section id="partners">
+            <div class="container">
+                <div class="row">
+                    <div class="logo-content d-flex flex-wrap justify-content-between">
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/js.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/php.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/py.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/react.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/html.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+                        <a href="#" class="mb-5 mx-2">
+                            <img src="assets/img/c.svg" alt="logo" class="logo-image img-fluid">
+                        </a>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
-    <!-- Seção de Artigos Interessantes -->
-    <div class="articles-section">
-      <!-- Use a tag <a> em torno do conteúdo do bloco de artigo para criar o link -->
-      <a href="https://www.example.com/artigo-1" class="article-block">
-        <h2 class="article-title">Artigos Interessantes sobre Cães</h2>
-        <div class="article-content">
-          <h3>Como Ensinar Truques Divertidos ao Seu Cão</h3>
-          <p>
-            Ensinar truques ao seu cão pode ser uma atividade divertida e estimulante
-            para ambos. Neste artigo, discutiremos dicas e técnicas para ensinar seu
-            cão a fazer truques como dar a pata, rolar, entre outros.
-          </p>
-        </div>
-      </a>
-      <!-- Use a tag <a> em torno do conteúdo do bloco de artigo para criar o link -->
-      <a href="https://www.example.com/artigo-2" class="article-block">
-        <h2 class="article-title">As Raças de Cachorro Mais Inteligentes</h2>
-        <div class="article-content">
-          <h3>As Raças de Cachorro Mais Inteligentes</h3>
-          <p>
-            Descubra quais são as raças de cachorro consideradas as mais inteligentes
-            e aprenda sobre suas características distintas. Entenda como a inteligência
-            pode afetar o treinamento e a interação com essas raças.
-          </p>
-        </div>
-      </a>
-      <!-- Adicione mais blocos com artigos aqui -->
-    </div>
+        <div id="features" class="cards-1">
+            <div class="container px-4 sm:px-8 xl:px-4">
 
-  </div>
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/mobile.svg" alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3">Mobile Development</h5>
+                        <p class="lead1 fw-normal text-muted mb-2">Eleve seu negócio ao conquistar uma sólida presença digital!</p>
+                    </div>
+                </div>
+                <!-- end of card -->
 
-  <script>
-    function calculate() {
-      const dogName = document.getElementById('dog-name').value;
-      const humanAge = parseInt(document.getElementById('human-age').value);
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/web.svg " alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3">Web Development</h5>
+                        <p class="lead1 fw-normal text-muted mb-2">Assegure presença forte e representação de qualidade!</p>
+                    </div>
+                </div>
+                <!-- end of card -->
 
-      if (dogName.trim() === '') {
-        alert('Por favor, digite o nome do seu cão.');
-        return;
-      }
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/design.svg" alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3">Design</h5>
+                        <p class="lead1 fw-normal text-muted mb-1">Transformamos suas ideias em designs que destacam sua marca.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
 
-      if (humanAge > 0) {
-        const canineAge = humanAge * 7;
-        document.getElementById('result').innerText = `A idade canina de ${dogName} é aproximadamente ${canineAge} anos.`;
-      } else {
-        document.getElementById('result').innerText = 'Por favor, digite uma idade válida.';
-      }
-    }
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/analytics.svg" alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3">Data Analytics</h5>
+                        <p class="lead1 fw-normal text-muted mb-2">Maximize suas decisões com análise de dados!</p>
+                    </div>
+                </div>
+                <!-- end of card -->
 
-    function toggleTips() {
-      const tipsList = document.getElementById('tips-list');
-      const expandBtn = document.querySelector('.expand-btn');
+                <!-- Card -->
+               
+                <!-- end of card -->
 
-      if (tipsList.style.display === 'none') {
-        tipsList.style.display = 'block';
-        expandBtn.innerText = 'Esconder Dicas';
-      } else {
-        tipsList.style.display = 'none';
-        expandBtn.innerText = 'Mostrar Dicas';
-      }
-    }
-  </script>
-</body>
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/api.svg" alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3"">API</h5>
+                        <p class="lead1 fw-normal text-muted mb-2">Realize a exportação e importação de dados de maneira eficaz</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/img/muitomais.svg" alt="alternative" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="display-cards1 lh-1 mb-3">E muito mais!</h5>
+                        <p class="lead1 fw-normal text-muted mb-1">Nos diga seu projeto que iremos te ajudar. Tecnologia é com a gente!</p>
+                    </div>
+                </div>
+            </div> <!-- end of container -->
+        </div> <!-- end of cards-1 -->
+        
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-cta pt-5 pb-5">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <div class="cta-text">
+                                    
+                                    <h4>Localização</h4>
+                                    <span>Avenida Paulista, 1636 - São Paulo SP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="bi bi-telephone-fill"></i>
+                                <div class="cta-text">
+                                    <h4>Telefone</h4>
+                                    <span>+55 11 94574-2819</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="bi bi-envelope-fill"></i>
+                                <div class="cta-text">
+                                    <h4>E-mail</h4>
+                                    <span>alexandre.dutra@datecmaster.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <!-- Feedback Modal-->
+    
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
